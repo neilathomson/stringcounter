@@ -10,6 +10,14 @@ import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+/**
+ * Implements the {@link WordCounter} interface to provide parallel word counting functionality.
+ * <p>
+ * This class efficiently counts word occurrences within a text stream, utilizing parallel
+ * streams for improved performance. It leverages regular expressions for word splitting and
+ * punctuation removal, and performs case-insensitive counting. Additionally, it allows customizing
+ * the sorting of results based on different criteria.
+ */
 public class SimpleParallelWordCounter implements WordCounter {
 
     private static final Pattern WORD_PATTERN = Pattern.compile("\\s+");
