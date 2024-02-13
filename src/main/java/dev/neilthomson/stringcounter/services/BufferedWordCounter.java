@@ -11,10 +11,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Implements the {@link WordCounter} interface to provide parallel word counting functionality.
+ * <p>
+ * A WordCounter implementation that counts words from an InputStream using a buffered approach.
+ * This implementation reads characters from the input stream in a buffered manner, counts words,
+ * and returns a list of word counts sorted according to a provided comparator.
+ */
 public class BufferedWordCounter implements WordCounter {
 
     private final int bufferSize;
 
+    /**
+     * Constructs a BufferedWordCounter with the specified buffer size.
+     *
+     * @param bufferSize the size of the buffer to use for reading characters from the input stream.
+     */
     public BufferedWordCounter(int bufferSize) {
         this.bufferSize = bufferSize;
     }
