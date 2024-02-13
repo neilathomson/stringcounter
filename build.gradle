@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+    id 'pmd'
+}
+
+group = 'dev.neilthomson'
+version = '1.6'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-core:5.10.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.10.0'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = "6.21.0"
+    rulesMinimumPriority = 5
+    ruleSetFiles = files("config/pmd/rules.xml")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = 'dev.neilthomson.stringcounter.Application'
+}
